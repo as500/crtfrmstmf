@@ -12,17 +12,17 @@ CTL-OPT DFTACTGRP(*NO) ACTGRP(*NEW);
 
 // Prototype and Interface for this program
 DCL-PR CRTFRMSTMF;
-    pObj   CHAR(20);
-    Cmd    CHAR(10);
-    pStmf  CHAR(5002);
-    pParms CHAR(2002);
+    pObj     CHAR(20);
+    Cmd      CHAR(10);
+    pSrcStmf CHAR(5002);
+    pParms   CHAR(2002);
 END-PR;
 
 DCL-PI CRTFRMSTMF;
-    pObj   CHAR(20);
-    Cmd    CHAR(10);
-    pStmf  CHAR(5002);
-    pParms CHAR(2002);
+    pObj     CHAR(20);
+    Cmd      CHAR(10);
+    pSrcStmf CHAR(5002);
+    pParms   CHAR(2002);
 END-PI;
 
 
@@ -84,9 +84,9 @@ DCL-DS ObjDS;
     Lib CHAR(10);
 END-DS;
 
-DCL-DS StmfDS;
-    StmfLen INT(5);
-    Stmf    CHAR(5000);
+DCL-DS SrcStmfDS;
+    SrcStmfLen INT(5);
+    SrcStmf    CHAR(5000);
 END-DS;
 
 DCL-DS ParmsDS;
@@ -138,7 +138,7 @@ DCL-S UpdatedStringLen INT(10);
 
 // Extract values from the compound parameters
 ObjDS   = pObj;
-StmfDS  = pStmf;
+SrcStmfDS  = pSrcStmf;
 ParmsDS = pParms;
 
 
@@ -151,7 +151,7 @@ CALLP(E) ExecuteCommand(CommandString:%LEN(CommandString));
 
 
 // Copy the source from the IFS to the temporary source file
-CommandString = 'CPYFRMSTMF FROMSTMF(''' + %SUBST(Stmf:1:StmfLen) + ''') '
+CommandString = 'CPYFRMSTMF FROMSTMF(''' + %SUBST(SrcStmf:1:SrcStmfLen) + ''') '
               + 'TOMBR(''/QSYS.LIB/QTEMP.LIB/QSOURCE.FILE/' + %TRIM(Obj) + '.MBR'') '
               + 'MBROPT(*REPLACE)';
 CALLP(E) ExecuteCommand(CommandString:%LEN(CommandString));

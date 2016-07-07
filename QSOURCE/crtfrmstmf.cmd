@@ -10,7 +10,7 @@
              PARM       KWD(CMD) TYPE(*NAME) LEN(10) RSTD(*YES) VALUES(CRTCMD CRTBNDCL CRTCLMOD CRTDSPF CRTPRTF +
                           CRTLF CRTPF CRTSRVPGM) MIN(1) CHOICE(*VALUES) PROMPT('Compile command')
 
-             PARM       KWD(STMF) TYPE(*PNAME) LEN(5000) MIN(1) VARY(*YES *INT2) CASE(*MIXED) PROMPT('Source +
+             PARM       KWD(SRCSTMF) TYPE(*PNAME) LEN(5000) MIN(1) VARY(*YES *INT2) CASE(*MIXED) PROMPT('Source +
                           stream file')
 
              PARM       KWD(PARMS) TYPE(*CHAR) LEN(2000) VARY(*YES *INT2) CASE(*MONO) PROMPT('Additional +
