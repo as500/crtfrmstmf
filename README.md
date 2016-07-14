@@ -12,4 +12,4 @@ RELICGET PLOC('https://bitbucket.org/BrianGarland/crtfrmstmf/get/5b2d4cf7eafd.zi
 
 **License**
 
-MIT License. See file 'LICENSE` in root of this repository.
+MIT License. See file `LICENSE` in root of this repository.
