@@ -17,4 +17,4 @@
                           parameters')
 
  QUAL1:      QUAL       TYPE(*NAME) LEN(10) RSTD(*NO) MIN(1)
-             QUAL       TYPE(*NAME) LEN(10) RSTD(*NO) DFT(*LIBL) SPCVAL((*LIBL *LIBL)) MIN(0) PROMPT('Library')
+             QUAL       TYPE(*NAME) LEN(10) RSTD(*NO) DFT(*CURLIB) SPCVAL((*CURLIB)) MIN(0) PROMPT('Library')
