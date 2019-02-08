@@ -135,6 +135,10 @@ DCL-DS ParmsDS;
     Parms    CHAR(2000);
 END-DS;
 
+DCL-DS LDA Qualified Dtaara(*LDA);
+    Eventf_lib CHAR(10);
+    Eventf_mbr CHAR(10);
+END-DS;
 
 // Prototypes for errno functions
 DCL-PR strerror POINTER EXTPROC('strerror');
